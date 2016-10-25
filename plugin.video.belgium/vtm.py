@@ -6,7 +6,7 @@ import channel
 
 class Channel(channel.Channel):
     def get_main_url(self):
-        return 'http://vtm.be'
+        return 'http://vtm.be/live'
     
     def get_categories(self, skip_empty_id = True):
         data = channel.get_url(self.main_url + '/video/programma')
@@ -17,7 +17,7 @@ class Channel(channel.Channel):
     def get_videos(self, datas):
         url = datas.get('url')
         print url
-        if url == 'http://vtm.be/het-nieuws/video':
+        if url == 'http://nieuws.vtm.be/':
             print 'Nieuw'
             return self.get_video_news()
         data = channel.get_url(url)
